@@ -1,5 +1,5 @@
 VANTA.RINGS({
-    el: ".landing",
+    el: ".footer",
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
@@ -12,7 +12,7 @@ VANTA.RINGS({
   })
 
   VANTA.NET({
-    el: ".footer",
+    el: ".landing",
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
@@ -27,6 +27,9 @@ VANTA.RINGS({
 /////// -------> ///////
 // start //
 gsap.registerPlugin(ScrollTrigger);
+gsap.to(".landing",{
+
+})
 
 let tl = gsap.timeline();
 tl.to(".txt",{
@@ -113,6 +116,11 @@ play.forEach(function (elem) {
 //  projects //
 // ============= //
 // selected //
+gsap.from(".p5u",{
+  opacity:0,y:200,x:200,height:0,scrollTrigger:{
+    scrub:2,pin:true,start:"74% 50%", end:"77% 63%",markers:true
+  }
+})
 let vplay = document.querySelectorAll(".v-con");
 vplay.forEach(function (elem1) {
   let targetvElem = elem1.childNodes[5]; // Adjust if needed // Adjust if needed

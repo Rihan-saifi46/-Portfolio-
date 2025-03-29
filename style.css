@@ -255,19 +255,26 @@ nav{
 .txt>img:nth-child(5){ left: 64%; top: 4%;   transform: rotate(7deg); }
 .txt>img:nth-child(6){ left: 80%; top: 48%;   transform: rotate(-4deg); }
 .page5{
-    height: 220vh; width: 98.5vw;  padding-top: 7vw; 
+    height: 220vh; width: 98.5vw;  padding-top: 7vw; overflow: hidden;
     display: flex; flex-direction: column; align-items: center; 
 }
 .p5u{
     height: 28vh; width: 94%; display: flex; border: 2px solid black; padding-left: 2vw;
     gap: 5.3vw; align-items: center; overflow: hidden; border-radius: 10px;
+    white-space: nowrap;
+    
+}
+@keyframes p5 {
+    0%{transform: translate(2%);}
+    100%{transform: translate(-104.5%);}
 }
 .p5u>p{
     font-size: 9vw; font-family: "montserrat",sans-serif; font-weight: 400; text-transform: uppercase;
+    animation: p5 8s linear infinite;
 }
 .p5i{
-    height: calc(220vh - 28vh); width: 100%;  display: flex;
-    flex-direction: column; gap: 1vw;position: relative;
+    height: calc(220vh - 28vh); width: 100%;  display: flex; background-color: white;
+    flex-direction: column; gap: 1vw;position: relative; z-index: 99;
 }
 .v-con{
     height: 75vh; width: 28vw;  position: absolute; border-radius: 10px; top: 5%;   left: 14%;
