@@ -1,0 +1,23 @@
+<div class="up0">
+                <img class="ig" src="./img/ku.png" alt="">
+                <video class="vi" autoplay muted loop src="./img/ku.mp4"></video>
+                <div class="gola">
+                    <i class="ri-arrow-right-line"></i>
+                </div>
+            </div>
+        
+
+        <div class="up0">
+            <img class="ig" src="./img/s (1).png" alt="">
+            <video class="vi" autoplay muted loop src="./img/shirt.mp4"></video>
+            <div class="gola">
+                <i class="ri-arrow-right-line"></i>
+            </div>
+        </div>
+        <div class="up0">
+            <img class="ig" src="./img/po.png" alt="">
+            <video class="vi" autoplay muted loop src="./img/pok.mp4"></video>
+            <div class="gola">
+                <i class="ri-arrow-right-line"></i>
+            </div>
+        </div>

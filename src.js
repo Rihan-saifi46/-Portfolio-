@@ -10,6 +10,20 @@ VANTA.RINGS({
     backgroundColor: 0x203,
     color: 0x410c79
   })
+
+  VANTA.NET({
+    el: ".footer",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0xdecfd7,
+    backgroundColor: 0x30008,
+    points: 12.00
+  })
 /////// -------> ///////
 // start //
 gsap.registerPlugin(ScrollTrigger);
@@ -26,11 +40,38 @@ tl.to(".txt",{
 // text reveal //
 gsap.to(".txt-area-hover>p",{
   width:"100%",stagger:.2, scrollTrigger:{
-    scrub:2,pin:true,start:"20% 100%", end:"25% 55%"
+    scrub:2,pin:true,start:"11% 97%", end:"15% 60%",
   }
 })
 // text reveal //
 //  =============== //
+let sl = gsap.timeline();
+sl.to(".p2-u>p ",{
+  x:-340,scrollTrigger:{
+   scrub:2,pin:true,start:"22% 70%", end:"24% 62%"
+ }
+})
+sl.from(".p2-u",{
+  opacity:0, height:0,y:300,x:200,scrollTrigger:{
+    scrub:2,pin:true,start:"21% 77%", end:"24% 75%",
+  }
+})
+sl.from(".tt",{
+    opacity:0,y:200,scrollTrigger:{
+    scrub:2,pin:true,start:"23% 65%", end:"24% 75%"
+  }
+})
+sl.from(".tools",{
+    opacity:0,x:-300,scrollTrigger:{
+    scrub:2,pin:true,start:"24% 50%", end:"24% 75%"
+  }
+})
+sl.from(".s-rght>img",{
+    opacity:0,x:300,scrollTrigger:{
+    scrub:2,pin:true,start:"24% 50%", end:"24% 75%"
+  }
+})
+// ========== //
 //  projects //
 let play = document.querySelectorAll(".up0");
 play.forEach(function (elem) {
@@ -100,3 +141,7 @@ vplay.forEach(function (elem1) {
   });
 });
 // selected //
+// footer //
+
+// footer //
+
