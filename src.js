@@ -115,7 +115,7 @@ tl.to(".txt",{
   x:"-90%",force3D: true,  ease: "power1.out",
   scrollTrigger:{
     pin:true, scrub:3,trigger:".page4",scroller:"body",  start: "top top",
-    end:"+=1500"
+    end:"+=1500",markers:true
   }
 })
 // selected //
