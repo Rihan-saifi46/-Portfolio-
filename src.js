@@ -28,22 +28,17 @@ VANTA.RINGS({
 // start //
 gsap.registerPlugin(ScrollTrigger);
 gsap.to(".landing",{
-
+ height:0, scrollTrigger:{
+  scrub:2,pin:true,start:"8% 67%", end:"15% 60%"
+}
 })
 
-let tl = gsap.timeline();
-tl.to(".txt",{
-  x:"-90%",force3D: true,  ease: "power1.out",
-  scrollTrigger:{
-    pin:true, scrub:3,trigger:".page4",scroller:"body",  start: "top top",
-    end:"+=1500"
-  }
-})
+
 // --------> //
 // text reveal //
 gsap.to(".txt-area-hover>p",{
   width:"100%",stagger:.2, scrollTrigger:{
-    scrub:2,pin:true,start:"11% 97%", end:"15% 60%",
+    scrub:2,pin:true,start:"11% 72%", end:"13% 60%"
   }
 })
 // text reveal //
@@ -51,12 +46,12 @@ gsap.to(".txt-area-hover>p",{
 let sl = gsap.timeline();
 sl.to(".p2-u>p ",{
   x:-340,scrollTrigger:{
-   scrub:2,pin:true,start:"22% 70%", end:"24% 62%"
+   scrub:2,pin:true,start:"16% 57%", end:"20% 52%",
  }
 })
 sl.from(".p2-u",{
   opacity:0, height:0,y:300,x:200,scrollTrigger:{
-    scrub:2,pin:true,start:"21% 77%", end:"24% 75%",
+    scrub:2,pin:true,start:"12% 57%", end:"16% 45%"
   }
 })
 sl.from(".tt",{
@@ -66,12 +61,12 @@ sl.from(".tt",{
 })
 sl.from(".tools",{
     opacity:0,x:-300,scrollTrigger:{
-    scrub:2,pin:true,start:"24% 50%", end:"24% 75%"
+    scrub:2,pin:true,start:"24% 74%", end:"24% 73%"
   }
 })
 sl.from(".s-rght>img",{
     opacity:0,x:300,scrollTrigger:{
-    scrub:2,pin:true,start:"24% 50%", end:"24% 75%"
+    scrub:2,pin:true,start:"24% 74%", end:"24% 73%"
   }
 })
 // ========== //
@@ -115,10 +110,18 @@ play.forEach(function (elem) {
 });
 //  projects //
 // ============= //
+let tl = gsap.timeline();
+tl.to(".txt",{
+  x:"-90%",force3D: true,  ease: "power1.out",
+  scrollTrigger:{
+    pin:true, scrub:3,trigger:".page4",scroller:"body",  start: "top top",
+    end:"+=1500"
+  }
+})
 // selected //
 gsap.from(".p5u",{
-  opacity:0,y:200,x:200,height:0,scrollTrigger:{
-    scrub:2,pin:true,start:"74% 50%", end:"77% 63%",markers:true
+  opacity:0,y:200,x:400,height:0,scrollTrigger:{
+    scrub:2,pin:true,start:"74% 75%", end:"77% 67%"
   }
 })
 let vplay = document.querySelectorAll(".v-con");

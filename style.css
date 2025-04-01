@@ -14,7 +14,7 @@
         font-style: normal;
 } 
 .landing{
-    width: 98.5vw; height: 100vh;  z-index: 999;
+    width: 98.5vw; height: 100vh;  z-index: 999; overflow: hidden;
 }
 .left{
     height: 100%; width: 40%; display: flex; padding-left: 5vw;
