@@ -43,32 +43,86 @@ gsap.to(".txt-area-hover>p",{
 })
 // text reveal //
 //  =============== //
-let sl = gsap.timeline();
-sl.to(".p2-u>p ",{
-  x:-340,scrollTrigger:{
-   scrub:2,pin:true,start:"16% 57%", end:"20% 52%",
- }
-})
-sl.from(".p2-u",{
-  opacity:0, height:0,y:300,x:200,scrollTrigger:{
-    scrub:2,pin:true,start:"12% 57%", end:"16% 45%"
+function animateGSAP() {
+  // Kill previous animations to prevent stacking
+  gsap.killTweensOf(".p2-u>p");
+  gsap.killTweensOf(".p2-u");
+
+  if (window.innerWidth > 768) {
+    gsap.to(".p2-u>p", {
+      x: -340,
+      scrollTrigger: {
+        scrub: 2,
+        pin: true,
+        start: "16% 57%",
+        end: "20% 52%",
+      },
+    });
+
+    gsap.from(".p2-u", {
+      opacity: 0,
+      height: 0,
+      y: 300,
+      x: 200,
+      scrollTrigger: {
+        scrub: 2,
+        pin: true,
+        start: "12% 57%",
+        end: "16% 45%",
+      },
+    });
   }
-})
-sl.from(".tt",{
-    opacity:0,y:200,scrollTrigger:{
-    scrub:2,pin:true,start:"23% 65%", end:"24% 75%"
+
+}
+
+// Initial call on page load
+animateGSAP();
+
+// Listen for window resize with debounce to improve performance
+let resizeTimeout;
+window.addEventListener("resize", function () {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(animateGSAP, 150);
+});
+
+function animateGSAP1() {
+  // Kill previous animations to prevent stacking
+  gsap.killTweensOf(".tt");
+  gsap.killTweensOf(".tools");
+  gsap.killTweensOf(".s-rght>img");
+
+  if (window.innerWidth > 768) {
+    let sl = gsap.timeline();
+    sl.from(".tt",{
+        opacity:0,y:200,scrollTrigger:{
+        scrub:2,pin:true,start:"23% 65%", end:"24% 75%"
+      }
+    })
+    sl.from(".tools",{
+        opacity:0,x:-300,scrollTrigger:{
+        scrub:2,pin:true,start:"24% 74%", end:"24% 73%"
+      }
+    })
+    sl.from(".s-rght>img",{
+        opacity:0,x:300,scrollTrigger:{
+        scrub:2,pin:true,start:"24% 74%", end:"24% 73%"
+      }
+    })
   }
-})
-sl.from(".tools",{
-    opacity:0,x:-300,scrollTrigger:{
-    scrub:2,pin:true,start:"24% 74%", end:"24% 73%"
-  }
-})
-sl.from(".s-rght>img",{
-    opacity:0,x:300,scrollTrigger:{
-    scrub:2,pin:true,start:"24% 74%", end:"24% 73%"
-  }
-})
+  
+}
+
+// Initial call on page load
+animateGSAP();
+
+// Listen for window resize with debounce to improve performance
+let resizeTimeout1;
+window.addEventListener("resize", function () {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(animateGSAP1, 150);
+});
+
+
 // ========== //
 //  projects //
 let play = document.querySelectorAll(".up0");

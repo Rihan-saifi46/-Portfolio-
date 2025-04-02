@@ -124,7 +124,7 @@ html {
 }
 @media (max-width:600px) {
     .page1{
-        border: 2px solid black; height: 50vh; width: 100vw; position: relative;
+        height: 40vh; width: 100vw; position: relative;
         display: flex;  align-items: center;
       
     }
@@ -182,26 +182,78 @@ html {
     gap: 1.5vw; align-items: center; text-transform: capitalize; padding-top: 1vw;
     animation: html 8s linear  infinite;
 }
-@keyframes html {
-    0%{
-        transform: translateY(2%);
-    }
-    100%{
-        transform: translateY(-112%);
-    }
-}
 .s-one>p{
     font-family: "montserrat",sans-serif; font-size: 1.5vw;  text-shadow: 0 0 10px #111; 
 }
 .s-two{
     animation: html2 8s linear  infinite;
 }
-@keyframes html2 {
-    100%{
-        transform: translateY(2%);
+@media (max-width:600px){
+    .page2{
+        height: 80vh; width: 100vw; 
     }
-    0%{
-        transform: translateY(-112%);
+    .p2-u{
+        height: 15vh; font-size: 11vw;
+    }
+    .p2-u>p{
+        animation: sup 6s linear infinite;
+    }
+    @keyframes sup {
+        0%{
+            transform: translate(2.2%);
+        }
+        100%{
+            transform: translate(-99.2%);
+        }
+    }
+    .skills{
+        height: calc(80vh - 15vh); 
+    }
+    .s-left{
+        height: 100%; width: 100%; gap: 7vw;
+    }
+    .s-left>p:nth-child(1){
+        font-size: 12vw;
+    }
+    .s-left>p:nth-child(2){
+        font-size: 6.5vw;
+    }
+    .tools{
+        height: 60%; width: 60%; display: flex;justify-content: center;
+    }
+    .s-one{
+        width: 100%;
+    }
+    .s-one>p{
+        font-size: 6vw; text-shadow: 0 0 2px;
+    }
+    .s-two{
+        display: none;
+    }
+    .s-three{
+        display: none;
+    }
+    .s-rght{
+        display: none;
+    }
+}
+@media (min-width:900px){
+    @keyframes html {
+        0%{
+            transform: translateY(2%);
+        }
+        100%{
+            transform: translateY(-112%);
+        }
+    }
+    
+    @keyframes html2 {
+        100%{
+            transform: translateY(2%);
+        }
+        0%{
+            transform: translateY(-112%);
+        }
     }
 }
 .page3{
@@ -218,6 +270,20 @@ html {
 }
 .head>img{
     height: 6vw; width: 7vw; 
+}
+@media (max-width:600px){
+    .page3{
+        height: 150vh; width: 100vw; border: 2px solid black; padding: 0;
+    }
+    .head{
+        height: 17vh; border: 2px solid black; padding-left: 5vw; gap: 3vw;
+    }
+    .head>p{
+        font-size: 15vw;
+    }
+    .head>img{
+       height: 13vw; width: 13vw; 
+    }
 }
 .midd{
     width: 100%; height: calc(200vh - 40vh); display: flex; flex-direction: column; gap: 2vw;
