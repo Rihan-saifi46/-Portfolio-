@@ -1,7 +1,10 @@
 *{
     padding: 0; margin: 0; box-sizing: border-box;
 }
-
+@font-face {
+    font-family: amoria;
+    src: url(font/AMORIA.otf);
+}
 html {
   scroll-behavior: smooth;
 }
@@ -126,7 +129,7 @@ nav{
 /* page started  */
 .page1{
     height: 100vh; width: 98.5vw;color: #111; position: relative; display: flex;
-    align-items: center; overflow: hidden;
+    align-items: center; overflow: hidden; background-color: white;
 }
 .txt-area{
    position: absolute; left: 13%; 
@@ -145,7 +148,7 @@ nav{
 
 /* page 1 ended  */
 .page2{
-    height: 135vh; width: 98.5vw; display: flex; justify-content: space-between;
+    height: 135vh; width: 98.5vw; display: flex; justify-content: space-between; background-color: white;
     flex-direction: column; align-items: center;  padding-top: 6vw; overflow: hidden;
 }
 .p2-u{
@@ -208,7 +211,7 @@ nav{
 }
 .page3{
     height: 160vh; width: 98.5vw;  padding-top: 15vh;
-     gap: 3vw;
+     gap: 3vw; background-color: white;
 }
 .head{
     height: 24vh; width: 100%;  display: flex;z-index: 999; background-color: white;
@@ -246,24 +249,53 @@ nav{
     width: 100%; height: 100%; border-radius: 10px; object-fit: cover; 
 }
 .page4{
-    height: 100vh; width: 98.5vw; padding-left: 3vw; background-color: #909497; overflow: hidden;
+    height: 100vh; width: 98.5vw; background-color: #b6b6b6; overflow: hidden;
+     background-attachment: fixed;
 }
 .txt{
-    height: 100%; width: 415%;  font-size: 19vw; font-weight: 500; color: #e5e4e2; 
-    font-family: "montserrat",sans-serif; white-space: nowrap; text-transform: uppercase;
-    display: flex; align-items: center; background-color: #909497; position: relative;
+    height: 100%; width: 100%; transform: rotate(-5deg);  
+    display: flex; flex-direction: column; justify-content: space-evenly;
 }
-
-.txt>img{height: 44%; width: 5%; object-fit: 100% 100%;position: absolute; border-radius: 10px;z-index: -99; }
-.txt>img:nth-child(1){ left: 10%; top: 4%;   transform: rotate(4deg); }
-.txt>img:nth-child(2){ left: 20%; top: 46%;   transform: rotate(-4deg); z-index: 99; }
-.txt>img:nth-child(3){ left: 34%; top: 4%;   transform: rotate(7deg); }
-.txt>img:nth-child(4){ left: 50%; top: 50%;   transform: rotate(-8deg); z-index: 99;}
-.txt>img:nth-child(5){ left: 64%; top: 4%;   transform: rotate(7deg); }
-.txt>img:nth-child(6){ left: 80%; top: 48%;   transform: rotate(-4deg); }
+@font-face {
+    font-family: card;
+    src: url(font/cardinalfruitweb-regular.ttf);
+}
+@font-face {
+    font-family: founc;
+    src:url(font/FoundersGroteskCondensed-Bold.ttf);
+}
+@font-face {
+    font-family: bra;
+    src:url(font/Titania-Regular.ttf);
+}
+.phla{
+    height: 27%; width: 100%; display: flex; gap: 15vw;
+}
+.phla>p{
+   font-size: 7vw; text-transform: uppercase; font-family: "changa"; white-space: nowrap;
+   animation: go 8s linear infinite; font-family: amoria; font-weight: 600;color: #252d34;
+}
+.phla2>p{
+    font-family: card;font-weight: 1600; animation: go1 8s linear infinite;
+}
+.phla3>p{
+    font-family: bra; font-weight: 400; animation: go2 10s linear infinite;
+}
+@keyframes go{
+    0%{   transform: translate(6%); }
+    100%{   transform: translate(-104.5%); }
+}
+@keyframes go1{
+    0%{   transform: translate(-100%); }
+    100%{   transform: translate(-11.5%); }
+}
+@keyframes go2{
+    0%{   transform: translate(9%); }
+    100%{   transform: translate(-108.5%); }
+}
 .page5{
     height: 220vh; width: 98.5vw;  padding-top: 7vw; overflow: hidden;
-    display: flex; flex-direction: column; align-items: center; 
+    display: flex; flex-direction: column; align-items: center;  background-color: white;
 }
 .p5u{
     height: 28vh; width: 94%; display: flex; border: 2px solid black; padding-left: 2vw;

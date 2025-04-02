@@ -110,18 +110,27 @@ play.forEach(function (elem) {
 });
 //  projects //
 // ============= //
-let tl = gsap.timeline();
-tl.to(".txt",{
-  x:"-90%",force3D: true,  ease: "power1.out",
-  scrollTrigger:{
-    pin:true, scrub:3,trigger:".page4",scroller:"body",  start: ".1% top",
-    end:"+=1500",markers:true ,  immediateRender: false 
+
+// selected //
+let cl = gsap.timeline();
+cl.from(".p5u",{
+  opacity:0,y:200,x:400,height:0,scrollTrigger:{
+    scrub:2,pin:true,start:"60% 77%", end:"62% 67%"
   }
 })
-// selected //
-gsap.from(".p5u",{
-  opacity:0,y:200,x:400,height:0,scrollTrigger:{
-    scrub:2,pin:true,start:"74% 75%", end:"77% 67%"
+cl.from(".v1",{
+  opacity:0,x:-400,y:0,scrollTrigger:{
+    scrub:2,pin:true,start:"64% 68%", end:"66% 67%"
+  }
+})
+cl.from(".v2",{
+  opacity:0,x:400,y:0,scrollTrigger:{
+    scrub:2,pin:true,start:"66% 68%", end:"68% 67%"
+  }
+})
+cl.from(".v3",{
+  opacity:0,x:-400,y:0,scrollTrigger:{
+    scrub:2,pin:true,start:"68% 68%", end:"70% 67%"
   }
 })
 let vplay = document.querySelectorAll(".v-con");
