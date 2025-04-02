@@ -114,8 +114,8 @@ let tl = gsap.timeline();
 tl.to(".txt",{
   x:"-90%",force3D: true,  ease: "power1.out",
   scrollTrigger:{
-    pin:true, scrub:3,trigger:".page4",scroller:"body",  start: "top top",
-    end:"+=1500",markers:true
+    pin:true, scrub:3,trigger:".page4",scroller:"body",  start: ".1% top",
+    end:"+=1500",markers:true ,  immediateRender: false 
   }
 })
 // selected //
