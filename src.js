@@ -26,13 +26,29 @@ VANTA.RINGS({
   })
 /////// -------> ///////
 // start //
-gsap.registerPlugin(ScrollTrigger);
-gsap.to(".landing",{
- height:0, scrollTrigger:{
-  scrub:2,pin:true,start:"8% 67%", end:"15% 60%"
+function animateGSAP3() {
+  // Kill previous animations to prevent stacking
+  gsap.killTweensOf(".landing");
+  if (window.innerWidth > 768) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(".landing",{
+     height:0, scrollTrigger:{
+      scrub:2,pin:true,start:"8% 67%", end:"15% 60%"
+    }
+    })
+    
+  }
 }
-})
 
+// Initial call on page load
+animateGSAP3();
+
+// Listen for window resize with debounce to improve performance
+let resizeTimeout3;
+window.addEventListener("resize", function () {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(animateGSAP3, 150);
+});
 
 // --------> //
 // text reveal //
@@ -113,7 +129,7 @@ function animateGSAP1() {
 }
 
 // Initial call on page load
-animateGSAP();
+animateGSAP1();
 
 // Listen for window resize with debounce to improve performance
 let resizeTimeout1;
@@ -166,27 +182,48 @@ play.forEach(function (elem) {
 // ============= //
 
 // selected //
-let cl = gsap.timeline();
-cl.from(".p5u",{
-  opacity:0,y:200,x:400,height:0,scrollTrigger:{
-    scrub:2,pin:true,start:"60% 77%", end:"62% 67%"
+function animateGSAP2() {
+  // Kill previous animations to prevent stacking
+  gsap.killTweensOf(".p5u");
+  gsap.killTweensOf(".v-con");
+
+  if (window.innerWidth > 768) {
+    let cl = gsap.timeline();
+    cl.from(".p5u",{
+      opacity:0,y:200,x:400,height:0,scrollTrigger:{
+        scrub:2,pin:true,start:"60% 77%", end:"62% 67%"
+      }
+    })
+    cl.from(".v1",{
+      opacity:0,x:-400,y:0,scrollTrigger:{
+        scrub:2,pin:true,start:"64% 68%", end:"66% 67%"
+      }
+    })
+    cl.from(".v2",{
+      opacity:0,x:400,y:0,scrollTrigger:{
+        scrub:2,pin:true,start:"66% 68%", end:"68% 67%"
+      }
+    })
+    cl.from(".v3",{
+      opacity:0,x:-400,y:0,scrollTrigger:{
+        scrub:2,pin:true,start:"68% 68%", end:"70% 67%"
+      }
+    })
+  
   }
-})
-cl.from(".v1",{
-  opacity:0,x:-400,y:0,scrollTrigger:{
-    scrub:2,pin:true,start:"64% 68%", end:"66% 67%"
-  }
-})
-cl.from(".v2",{
-  opacity:0,x:400,y:0,scrollTrigger:{
-    scrub:2,pin:true,start:"66% 68%", end:"68% 67%"
-  }
-})
-cl.from(".v3",{
-  opacity:0,x:-400,y:0,scrollTrigger:{
-    scrub:2,pin:true,start:"68% 68%", end:"70% 67%"
-  }
-})
+  
+}
+
+// Initial call on page load
+animateGSAP2();
+
+// Listen for window resize with debounce to improve performance
+let resizeTimeout2;
+window.addEventListener("resize", function () {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(animateGSAP2, 150);
+});
+
 let vplay = document.querySelectorAll(".v-con");
 vplay.forEach(function (elem1) {
   let targetvElem = elem1.childNodes[5]; // Adjust if needed // Adjust if needed
